@@ -57,7 +57,7 @@ export default function YahtzeeSimulator() {
     }, 50);
   };
 
-  const chartData = {
+  const chartData = stats && results.length > 0 ? {
     labels: results.map((_, i) => i + 1),
     datasets: [
       {
@@ -70,7 +70,7 @@ export default function YahtzeeSimulator() {
         showLine: false,
         order: 1,
       },
-      stats && {
+      {
         type: 'line',
         label: `Average: ${stats.avg.toFixed(2)}`,
         data: Array(results.length).fill(stats.avg),
@@ -81,8 +81,8 @@ export default function YahtzeeSimulator() {
         pointRadius: 0,
         order: 2,
       },
-    ].filter(Boolean),
-  };
+    ],
+  } : null;
 
   const chartOptions = {
     responsive: true,
@@ -131,7 +131,7 @@ export default function YahtzeeSimulator() {
           <p>Max rolls: <strong>{stats.max}</strong></p>
         </div>
       )}
-      {!loading && results.length > 0 && (
+      {!loading && chartData && (
         <div style={{ marginBottom: "2rem" }}>
           <Line data={chartData} options={chartOptions} />
         </div>
