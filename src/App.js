@@ -7,10 +7,11 @@ import {
   PointElement,
   Legend,
   Tooltip,
+  Filler,
 } from "chart.js";
 import { Line } from "react-chartjs-2";
 
-ChartJS.register(LineElement, CategoryScale, LinearScale, PointElement, Legend, Tooltip);
+ChartJS.register(LineElement, CategoryScale, LinearScale, PointElement, Legend, Tooltip, Filler);
 
 function rollDice() {
   return Array.from({ length: 5 }, () => Math.floor(Math.random() * 6) + 1);
@@ -59,7 +60,7 @@ export default function YahtzeeSimulator() {
         data: results,
         borderColor: "#3b82f6",
         backgroundColor: "#3b82f6",
-        pointRadius: 3,
+        pointRadius: 2,
         showLine: false,
         order: 1,
       },
@@ -67,9 +68,11 @@ export default function YahtzeeSimulator() {
         label: `Average: ${stats.avg}`,
         data: Array(results.length).fill(stats.avg),
         borderColor: "#ef4444",
+        backgroundColor: "rgba(239, 68, 68, 0.1)",
         borderDash: [5, 5],
         pointRadius: 0,
-        borderWidth: 2,
+        borderWidth: 3,
+        fill: false,
         order: 2,
       },
     ].filter(Boolean),
