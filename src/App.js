@@ -61,17 +61,15 @@ export default function YahtzeeSimulator() {
     labels: results.map((_, i) => i + 1),
     datasets: [
       {
-        type: 'scatter',
         label: "Rolls per Trial",
         data: results,
-        borderColor: "#3b82f6",
+        borderColor: "transparent",
         backgroundColor: "#3b82f6",
         pointRadius: 2,
         showLine: false,
         order: 1,
       },
       {
-        type: 'line',
         label: `Average: ${stats.avg.toFixed(2)}`,
         data: Array(results.length).fill(stats.avg),
         borderColor: "#ef4444",
