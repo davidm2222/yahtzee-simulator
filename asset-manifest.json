@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/yahtzee-simulator/static/css/main.e6c13ad2.css",
+    "main.js": "/yahtzee-simulator/static/js/main.ee8d45ae.js",
+    "static/js/453.eb2a037b.chunk.js": "/yahtzee-simulator/static/js/453.eb2a037b.chunk.js",
+    "index.html": "/yahtzee-simulator/index.html",
+    "main.e6c13ad2.css.map": "/yahtzee-simulator/static/css/main.e6c13ad2.css.map",
+    "main.ee8d45ae.js.map": "/yahtzee-simulator/static/js/main.ee8d45ae.js.map",
+    "453.eb2a037b.chunk.js.map": "/yahtzee-simulator/static/js/453.eb2a037b.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e6c13ad2.css",
+    "static/js/main.ee8d45ae.js"
+  ]
+}
