@@ -61,6 +61,7 @@ export default function YahtzeeSimulator() {
         backgroundColor: "#3b82f6",
         pointRadius: 3,
         showLine: false,
+        order: 1,
       },
       stats && {
         label: `Average: ${stats.avg}`,
@@ -68,6 +69,8 @@ export default function YahtzeeSimulator() {
         borderColor: "#ef4444",
         borderDash: [5, 5],
         pointRadius: 0,
+        borderWidth: 2,
+        order: 2,
       },
     ].filter(Boolean),
   };
