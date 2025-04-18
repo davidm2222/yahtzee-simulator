@@ -51,7 +51,7 @@ export default function YahtzeeSimulator() {
       const avg = data.reduce((a, b) => a + b, 0) / data.length;
       const min = Math.min(...data);
       const max = Math.max(...data);
-      setStats({ avg: avg.toFixed(2), min, max });
+      setStats({ avg, min, max });
       setResults(data);
       setLoading(false);
     }, 50);
@@ -72,7 +72,7 @@ export default function YahtzeeSimulator() {
       },
       stats && {
         type: 'line',
-        label: `Average: ${stats.avg}`,
+        label: `Average: ${stats.avg.toFixed(2)}`,
         data: Array(results.length).fill(stats.avg),
         borderColor: "#ef4444",
         borderDash: [5, 5],
@@ -126,7 +126,7 @@ export default function YahtzeeSimulator() {
       )}
       {!loading && stats && (
         <div style={{ marginBottom: "1rem", fontSize: "1.1rem" }}>
-          <p>Average rolls: <strong>{stats.avg}</strong></p>
+          <p>Average rolls: <strong>{stats.avg.toFixed(2)}</strong></p>
           <p>Min rolls: <strong>{stats.min}</strong></p>
           <p>Max rolls: <strong>{stats.max}</strong></p>
         </div>
